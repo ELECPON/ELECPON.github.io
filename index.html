@@ -210,8 +210,6 @@
     let adds = 'https://workink.net/27tB/ad0ohknz';
     
     document.addEventListener("DOMContentLoaded", () => {
-      const ref = document.referrer;
-      const allowedRef = ref.includes("work.ink");
       const params = new URLSearchParams(window.location.search);
       const token = params.get('key');
       const wrap = document.querySelector('.wrap');
@@ -219,8 +217,6 @@
       if (token != 'ok') {
         location.href = adds;  
       } else {
-    
-        if (allowedRef) {
           // Cargar interfaz principal
           wrap.innerHTML = `
             <h1>FaceSwap - Enviar dos imágenes</h1>
@@ -324,15 +320,12 @@
           });
     
           resetUI();
-     
-        } else {
-          location.href = adds
-        }
       }
     });
   </script>
 </body>
 </html>
+
 
 
 
