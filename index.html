@@ -215,8 +215,14 @@
       const params = new URLSearchParams(window.location.search);
       const token = params.get('key');
       const wrap = document.querySelector('.wrap');
-  
-      if (token != 'ok') {
+
+      alert(token == 'ok')
+      alert(allowedRef)
+      
+      
+      if (token != 'ok') 
+        alert('entrada uno')
+
         location.href = adds;  
       } else {
     
@@ -326,6 +332,8 @@
           resetUI();
      
         } else {
+          alert('entrada dos')
+
           location.href = adds
         }
       }
@@ -333,6 +341,7 @@
   </script>
 </body>
 </html>
+
 
 
 
