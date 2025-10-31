@@ -213,10 +213,16 @@
       const params = new URLSearchParams(window.location.search);
       const token = params.get('key');
       const wrap = document.querySelector('.wrap');
-
+      let generado = false;
+      
       if (token != 'ok') {
         location.href = adds;  
       } else {
+
+          if(localStorage.getItem('status') == 'ok'){
+            localStorage.removeItem('status');
+            location.href = adds;  
+          }
           // Cargar interfaz principal
           wrap.innerHTML = `
             <h1>FaceSwap - Enviar dos imágenes</h1>
@@ -296,6 +302,7 @@
               let imageUrl = result.data[1].url;
     
               if (imageUrl) {
+                localStorage.setItem('status', 'ok');
                 wrap.innerHTML = `
                   <div class="result" id="resultArea">
                     <h3 style="margin-top:8px">Resultado</h3>
@@ -325,6 +332,7 @@
   </script>
 </body>
 </html>
+
 
 
 
