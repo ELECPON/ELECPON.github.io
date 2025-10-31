@@ -215,14 +215,9 @@
       const params = new URLSearchParams(window.location.search);
       const token = params.get('key');
       const wrap = document.querySelector('.wrap');
-    
-      console.log(token)
-      console.log(allowedRef)
-      console.log(token && allowedRef)
-      //https://caraswapper.netlify.app?key=ok
-    
+  
       if (token != 'ok') {
-        //location.href = adds;  
+        location.href = adds;  
       } else {
     
         if (allowedRef) {
@@ -331,12 +326,13 @@
           resetUI();
      
         } else {
-         // location.href = adds
+          location.href = adds
         }
       }
     });
   </script>
 </body>
 </html>
+
 
 
